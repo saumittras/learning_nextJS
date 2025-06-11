@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
       >
         {/* Navbar Section will started here */}
        <NavBar/>
-        <main className="h-screen max-h-max">
+        <main className="h-screen min-h-max">
           {children}
         </main>
         {/* Footer will start from here */}

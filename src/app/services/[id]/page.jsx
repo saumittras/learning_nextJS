@@ -119,7 +119,8 @@ export default function page({ params }) {
 
   const service = data.find((d) => d.id === idP);
   
-  return (
+  if(service){
+    return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm">
         <figure>
@@ -139,4 +140,10 @@ export default function page({ params }) {
       </div>
     </div>
   );
+  }else{
+    return <div>
+      Service Not Found
+    </div>
+  }
+  
 }
