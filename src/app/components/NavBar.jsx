@@ -1,6 +1,15 @@
+'use client'
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
+  const path = usePathname()
+  console.log(path)
+
+  if(path==='/admin' ||path==='/userdashboard' ){
+    return <></>
+  } else{
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -59,4 +68,4 @@ export default function NavBar() {
       </div>
     </div>
   );
-}
+}}

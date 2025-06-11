@@ -118,9 +118,7 @@ export default function page({ params }) {
   ];
 
   const service = data.find((d) => d.id === idP);
-  console.log(service)
-  console.log(idP)
-
+  
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-sm">
