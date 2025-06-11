@@ -1,5 +1,5 @@
-import ServiceCard from "../components/ServiceCard";
-export default function ServicesPage() {
+export default function page({ params }) {
+  const idP = parseInt(params?.id);
   const data = [
     {
       id: 1,
@@ -10,7 +10,7 @@ export default function ServicesPage() {
       rating: 4.8,
       providerName: "CreativePixel",
       deliveryTime: "2 days",
-      imgUrl: '/96433A27_1.jpeg',
+      imgUrl: "/96433A27_1.jpeg",
     },
     {
       id: 2,
@@ -22,7 +22,7 @@ export default function ServicesPage() {
       rating: 4.6,
       providerName: "WebFixNow",
       deliveryTime: "1 day",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ export default function ServicesPage() {
       rating: 4.9,
       providerName: "PromptFlow AI",
       deliveryTime: "3 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 4,
@@ -45,7 +45,7 @@ export default function ServicesPage() {
       rating: 4.7,
       providerName: "CareerBoost",
       deliveryTime: "2 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ export default function ServicesPage() {
       rating: 4.5,
       providerName: "StoreCraft",
       deliveryTime: "5 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 6,
@@ -68,7 +68,7 @@ export default function ServicesPage() {
       rating: 4.9,
       providerName: "DesignTribe",
       deliveryTime: "3 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 7,
@@ -79,7 +79,7 @@ export default function ServicesPage() {
       rating: 5.0,
       providerName: "CodeFusion",
       deliveryTime: "10 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 8,
@@ -90,7 +90,7 @@ export default function ServicesPage() {
       rating: 4.6,
       providerName: "SnapFix Studio",
       deliveryTime: "2 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 9,
@@ -101,7 +101,7 @@ export default function ServicesPage() {
       rating: 4.8,
       providerName: "CodeCoach Sam",
       deliveryTime: "1 day",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
     {
       id: 10,
@@ -113,20 +113,30 @@ export default function ServicesPage() {
       rating: 4.7,
       providerName: "VocalPro Mike",
       deliveryTime: "2 days",
-      imgUrl: '/96433A27_2.jpeg',
+      imgUrl: "/96433A27_2.jpeg",
     },
   ];
 
+  const service = data.find((d) => d.id === idP);
+  console.log(service)
+  console.log(idP)
+
   return (
     <div>
-      <h3 className="text-5xl">Services page</h3>
-      <div className="flex flex-col items-center justify-between">
-        <h2>All Services</h2>
-        <div className="grid grid-cols-3 gap-6">
-          {data.map((service) => (
-            <ServiceCard key={service.id} service={service} />
-          ))}
-          
+      <div className="card bg-base-100 w-96 shadow-sm">
+        <figure>
+          <img src={service?.imgUrl} alt="Shoes" />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            {service?.serviceName}
+            <div className="badge badge-secondary">NEW</div>
+          </h2>
+          <p>{service?.description}</p>
+          <div className="card-actions justify-end">
+            <div className="badge badge-outline">{service?.category}</div>
+            <div className="badge badge-outline">Products</div>
+          </div>
         </div>
       </div>
     </div>
