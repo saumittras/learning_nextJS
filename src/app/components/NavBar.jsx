@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function NavBar() {
   const path = usePathname()
-  console.log(path)
+  
 
   if(path==='/admin' ||path==='/userdashboard' ){
     return <></>
